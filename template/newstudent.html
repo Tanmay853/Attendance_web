@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register New Student</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+  <h1>Register New Student</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>Student Name:</label>
+      <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Upload Photo:</label>
+      <input type="file" name="photo" class="form-control" accept="image/*" required>
+    </div>
+    <button type="submit" class="btn btn-success">Register</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+  </form>
+
+  {% if success %}
+  <div class="alert alert-success" style="margin-top:20px;">
+    Student "{{ name }}" registered successfully!
+  </div>
+  {% endif %}
+
+  {% if error %}
+  <div class="alert alert-danger" style="margin-top:20px;">
+    {{ error }}
+  </div>
+  {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Result</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="table-responsive">
+      <h1 align="center">Attendance Result</h1>
+      <br />
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student, status in attendance %}
+          <tr>
+            <td>{{ student }}</td>
+            <td>{{ status }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
